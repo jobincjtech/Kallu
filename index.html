@@ -56,7 +56,7 @@ h1 .ch{display:inline-block;white-space:pre;background:linear-gradient(180deg,#f
 .go{margin-top:22px;display:inline-flex;align-items:center;gap:10px;font-weight:700;color:var(--cyan)}
 .go svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2;transition:transform .3s}
 .card:hover .go svg{transform:translateX(6px)}
-.soon{display:none;margin-left:auto;font-size:.75rem;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:#9fb6ea}
+.live{margin-left:auto;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:99px;border:1px solid #22e4ff66;color:var(--cyan);background:#22e4ff14}.live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--cyan);margin-right:7px;box-shadow:0 0 8px var(--cyan);animation:pulse 1.6s infinite}@keyframes pulse{50%{opacity:.3}}.card.unset .live{display:none}.card h2{letter-spacing:.02em}.cards::before{content:"SELECT A MODULE";grid-column:1/-1;font-size:.8rem;letter-spacing:.35em;color:#7f9ad6}.soon{display:none;margin-left:auto;font-size:.75rem;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:#9fb6ea}
 .card.unset .soon{display:inline-block}
 .card .head{display:flex;align-items:flex-start}
 
@@ -95,21 +95,21 @@ footer strong em{font-style:normal;color:var(--cyan)}
     <button class="card load d3" id="btn-analytics" type="button" data-key="analytics">
       <div class="head">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6" rx=".5"/><rect x="12" y="8" width="3" height="10" rx=".5"/><rect x="17" y="5" width="3" height="13" rx=".5"/></svg></div>
-        <span class="soon">Coming soon</span>
+        <span class="live">Live</span><span class="soon">Coming soon</span>
       </div>
       <h2>DHA Analytics</h2>
-      <p>Access advanced analytics and interactive dashboards.</p>
-      <span class="go">Open dashboard <svg viewBox="0 0 24 24"><path d="DHA.html"/></svg></span>
+      <p>Access DHA analytics, interactive dashboards and performance insights.</p>
+      <span class="go">Open DHA Analytics <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </button>
 
     <button class="card load d4" id="btn-reports" type="button" data-key="reports">
       <div class="head">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M8 17l2.5-3 2 2 3-4"/></svg></div>
-        <span class="soon">Coming soon</span>
+        <span class="live">Live</span><span class="soon">Coming soon</span>
       </div>
-      <h2>EMR &amp; Usability</h2>
-      <p>Explore detailed reports and intelligent insights.</p>
-      <span class="go">Open reports <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <h2>EMR Usability</h2>
+      <p>Explore EMR usability reports, adoption metrics and intelligent insights.</p>
+      <span class="go">Open EMR Usability <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </button>
   </section>
 </main>
@@ -128,14 +128,14 @@ footer strong em{font-style:normal;color:var(--cyan)}
    Leave empty ("") to show the "Coming Soon" message.
    ===================================================== */
 const PORTAL_CONFIG = {
-  analyticsDashboardURL: "",   // e.g. "https://your-server/analytics"
-  reportsInsightsURL:    ""    // e.g. "https://your-server/reports"
+  dhaAnalyticsURL: "DHA.html",   // DHA Analytics page
+  emrUsabilityURL: "EMR_USABILITY.html"    // EMR Usability page
 };
 /* ================= END OF CONFIGURATION ================= */
 
 (function(){
-  var URLS = { analytics: PORTAL_CONFIG.analyticsDashboardURL, reports: PORTAL_CONFIG.reportsInsightsURL };
-  var NAMES = { analytics: "Analytics Dashboard", reports: "Reports & Insights" };
+  var URLS = { analytics: PORTAL_CONFIG.dhaAnalyticsURL, reports: PORTAL_CONFIG.emrUsabilityURL };
+  var NAMES = { analytics: "DHA Analytics", reports: "EMR Usability" };
 
   function valid(u){ return typeof u==="string" && /^https?:\/\/\S+$/i.test(u.trim()); }
 
