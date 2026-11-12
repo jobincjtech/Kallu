@@ -124,7 +124,7 @@ footer strong em{font-style:normal;color:var(--cyan)}
 <script>
 /* =====================================================
    CONFIGURATION — EDIT ONLY THIS BLOCK
-   Paste each full URL (including https://) between the quotes.
+   Use a file name (e.g. "DHA.html") or a full URL (https://...) between the quotes.
    Leave empty ("") to show the "Coming Soon" message.
    ===================================================== */
 const PORTAL_CONFIG = {
@@ -137,7 +137,7 @@ const PORTAL_CONFIG = {
   var URLS = { analytics: PORTAL_CONFIG.dhaAnalyticsURL, reports: PORTAL_CONFIG.emrUsabilityURL };
   var NAMES = { analytics: "DHA Analytics", reports: "EMR Usability" };
 
-  function valid(u){ return typeof u==="string" && /^https?:\/\/\S+$/i.test(u.trim()); }
+  function valid(u){ return typeof u==="string" && u.trim()!=="" && !/^\s*(javascript|data|vbscript):/i.test(u); }
 
   var toast = document.getElementById("toast"), tt;
   function say(msg){ toast.textContent = msg; toast.classList.add("show"); clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove("show"); }, 3200); }
